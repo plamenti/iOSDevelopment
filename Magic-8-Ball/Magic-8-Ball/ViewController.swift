@@ -10,15 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // can be created using short version let ballArray = ["ball1", "ball2", "ball3", "ball4", "ball5"]
+    let ballArray : [String] = ["ball1", "ball2", "ball3", "ball4", "ball5"]
+    var randomBallNumber : Int = 0
+    
     @IBOutlet weak var ballImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        randomBallNumber = generateRandomNumber(upperBound: 4)
     }
 
 
     @IBAction func askButtonPressed(_ sender: Any) {
+    }
+    
+    func generateRandomNumber(upperBound : Int) -> Int{
+        return Int.random(in: 0...upperBound)
     }
 }
 
