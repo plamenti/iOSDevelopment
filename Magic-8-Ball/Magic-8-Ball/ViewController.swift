@@ -19,12 +19,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        randomBallNumber = generateRandomNumber(upperBound: 4)
-        ballImage.image = UIImage(named: ballArray[randomBallNumber])
+        newBallImage()
     }
 
 
     @IBAction func askButtonPressed(_ sender: Any) {
+        newBallImage()
+    }
+    
+    func newBallImage(){
+        randomBallNumber = generateRandomNumber(upperBound: 4)
+        ballImage.image = UIImage(named: ballArray[randomBallNumber])
     }
     
     func generateRandomNumber(upperBound : Int) -> Int{
