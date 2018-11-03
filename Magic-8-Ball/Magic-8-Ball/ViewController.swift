@@ -33,6 +33,9 @@ class ViewController: UIViewController {
     func newBallImage(){
         randomBallNumber = generateRandomNumber(upperBound: 4)
         ballImage.image = UIImage(named: ballArray[randomBallNumber])
+        
+        // another variation is creating the name with string interpolation
+        // ballImage.image = UIImage(named: "ball\(randomBallNumber+1)")
     }
     
     func generateRandomNumber(upperBound : Int) -> Int{
