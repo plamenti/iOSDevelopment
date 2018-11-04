@@ -33,3 +33,27 @@ for number in 1..<10 {
 for number in 1...10 where number % 2 == 0{
     print(number)
 }
+
+// Generate lyrics of the song 99 Bottles of Bear
+// 99 bottles of beer on the wall, 99 bottles of beer.
+// Take one down and pass it around, 98 bottles of beer on the wall.
+
+func generateLyricsOf99BottlesOfBeer(){
+    let beers = 99
+    
+    for beer in (1...beers).reversed(){
+        let bottle = beer != 1 ? "bottles":"bottle"
+        print("\(beer) \(bottle) of beer on the wall, \(beer) \(bottle) of beer.")
+        if beer > 1 {
+            print("Take one down and pass it around, \(beer - 1) bottles of beer on the wall.")
+        }
+        else{
+            print("Take one down and pass it around, no more bottles of beer on the wall.")
+        }
+    }
+    
+    print("No more bottles of beer on the wall, no more bottles of beer.")
+    print("Go to the store and buy some more, \(beers) bottles of beer on the wall.")
+}
+
+generateLyricsOf99BottlesOfBeer()
