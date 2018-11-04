@@ -7,6 +7,7 @@ for number in arrayOfNumbers{
     print("new cicle")
 }
 
+// Calculate sum of the array
 var sum = 0
 
 for number in arrayOfNumbers{
@@ -14,3 +15,15 @@ for number in arrayOfNumbers{
 }
 
 print(sum)
+
+// Loop through some range
+// From ... to inclusive
+for number in 1...10 {
+    print(number)
+}
+
+// Loop through some range
+// From ... to exclusive
+for number in 1..<10 {
+    print(number)
+}
