@@ -38,12 +38,11 @@ for number in 1...10 where number % 2 == 0{
 // 99 bottles of beer on the wall, 99 bottles of beer.
 // Take one down and pass it around, 98 bottles of beer on the wall.
 
-func generateLyricsOf99BottlesOfBeer(){
-    let beers = 99
+func generateLyricsOf99BottlesOfBeer(beers : Int){
     
     for beer in (1...beers).reversed(){
         let bottle = beer != 1 ? "bottles":"bottle"
-        print("\(beer) \(bottle) of beer on the wall, \(beer) \(bottle) of beer.")
+        print("\n\(beer) \(bottle) of beer on the wall, \(beer) \(bottle) of beer.")
         if beer > 1 {
             print("Take one down and pass it around, \(beer - 1) bottles of beer on the wall.")
         }
@@ -52,8 +51,8 @@ func generateLyricsOf99BottlesOfBeer(){
         }
     }
     
-    print("No more bottles of beer on the wall, no more bottles of beer.")
+    print("\nNo more bottles of beer on the wall, no more bottles of beer.")
     print("Go to the store and buy some more, \(beers) bottles of beer on the wall.")
 }
 
-generateLyricsOf99BottlesOfBeer()
+generateLyricsOf99BottlesOfBeer(beers: 99)
