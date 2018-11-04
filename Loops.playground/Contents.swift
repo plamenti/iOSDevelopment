@@ -56,3 +56,25 @@ func generateLyricsOf99BottlesOfBeer(beers : Int){
 }
 
 generateLyricsOf99BottlesOfBeer(beers: 99)
+
+// Another way to use parameters is to create outside parameter and inside parameter
+// Outside parameter is used outside of the functions, e.d. where the functions is used
+// Inside parameter is used inside the function
+// Example
+func showExampleForOutsideAndInsideParams(outside inside : Int){
+    for number in 0...inside{
+        print(number)
+    }
+}
+
+showExampleForOutsideAndInsideParams(outside: 10)
+
+// If outside parameter is _ then there is no need to be used where the functions is consumed
+// Example
+func showExampleForUnderscoreOutsideParam(_ inside : Int){
+    for number in 0...inside{
+        print(number)
+    }
+}
+
+showExampleForUnderscoreOutsideParam(10)
