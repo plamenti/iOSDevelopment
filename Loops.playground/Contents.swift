@@ -27,3 +27,9 @@ for number in 1...10 {
 for number in 1..<10 {
     print(number)
 }
+
+// Loop through some range by condition
+// From ... to inclusive
+for number in 1...10 where number % 2 == 0{
+    print(number)
+}
