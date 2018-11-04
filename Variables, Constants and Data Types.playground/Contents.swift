@@ -24,3 +24,8 @@ let booleans : Bool = true
 let floatingNumbers : Float = 3.141592
 let doubleNUmbers : Double = 3.141592653589793
 
+// try to assign a new value to constant will cause error
+let myConstant = 5
+// next line will cause error
+// myConstant = 7
+
