@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     // Access the DataBase
     let allQuestions = QuestionBank()
     var pickedAnswer: Bool = false
+    var questionNumber: Int = 0
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Get data from the DataBase
-        let firstQuestion = allQuestions.list[0]
+        let firstQuestion = allQuestions.list[questionNumber]
         
         // Send get data to the View
         questionLabel.text = firstQuestion.questinsText
@@ -39,6 +40,8 @@ class ViewController: UIViewController {
         }
         
         checkAnswer()
+        questionNumber += 1
+        nextQuestion()
     }
     
     
@@ -48,18 +51,23 @@ class ViewController: UIViewController {
     
 
     func nextQuestion() {
+        if questionNumber == allQuestions.list.count{
+            print("End of Quiz")
+            questionNumber = 0
+        }
         
+        questionLabel.text = allQuestions.list[questionNumber].questinsText
     }
     
     
     func checkAnswer() {
-        let correctAnswer = allQuestions.list[0].answer
+        let correctAnswer = allQuestions.list[questionNumber].answer
         
         if(correctAnswer == pickedAnswer){
-            print ("You got it!")
+            print("You got it!")
         }
         else{
-            print ("Wrong!")
+            print("Wrong!")
         }
     }
     
