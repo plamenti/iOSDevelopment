@@ -57,7 +57,8 @@ class ViewController: UIViewController {
     func nextQuestion() {
         if questionNumber == allQuestions.list.count{
             print("End of Quiz")
-
+            scoreLabel.text = "Score: \(score)"
+            
             // Create alert controller
             let alert = UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
             
@@ -108,6 +109,7 @@ class ViewController: UIViewController {
     
     func startOver() {
         questionNumber = 0
+        score = 0
         nextQuestion()
     }
     
