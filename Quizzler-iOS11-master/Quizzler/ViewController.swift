@@ -62,8 +62,20 @@ class ViewController: UIViewController {
                 self.startOver()
             })
             
+            // Exit an iOS app without it looking like a crash
+            let resetApp = UIAlertAction(title: "Close Now", style: .destructive) {
+                (alert) -> Void in
+                // home button pressed programmatically - to thorw app to background
+                UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+                // terminaing app in background
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    exit(EXIT_SUCCESS)
+                })
+            }
+            
             // Add created action to alert controler
             alert.addAction(restartAction)
+            alert.addAction(resetApp)
             
             // Presents alert controller modally
             present(alert, animated: true, completion: nil)
