@@ -44,21 +44,35 @@ class ViewController: UIViewController {
         nextQuestion()
     }
     
-    
     func updateUI() {
       
     }
     
-
     func nextQuestion() {
         if questionNumber == allQuestions.list.count{
             print("End of Quiz")
-            questionNumber = 0
+
+            // Create alert controller
+            let alert = UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
+            
+            // Create alert action
+            // If 'in' is used the following method should be either closure ( anonymous function) or method from the class
+            // If it's method from the class 'slef' should be used
+            let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { UIAlertAction in
+                self.startOver()
+            })
+            
+            // Add created action to alert controler
+            alert.addAction(restartAction)
+            
+            // Presents alert controller modally
+            present(alert, animated: true, completion: nil)
+        }
+        else{
+            questionLabel.text = allQuestions.list[questionNumber].questinsText
         }
         
-        questionLabel.text = allQuestions.list[questionNumber].questinsText
     }
-    
     
     func checkAnswer() {
         let correctAnswer = allQuestions.list[questionNumber].answer
@@ -71,11 +85,9 @@ class ViewController: UIViewController {
         }
     }
     
-    
     func startOver() {
-       
+        questionNumber = 0
+        nextQuestion()
     }
-    
-
     
 }
