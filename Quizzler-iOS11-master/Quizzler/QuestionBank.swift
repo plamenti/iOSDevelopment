@@ -9,6 +9,7 @@
 import Foundation
 
 // Store all of Questions in the App
+// In context of MVC pattern this is the DataBase
 class QuestionBank{
     
     var list = [Question]()
