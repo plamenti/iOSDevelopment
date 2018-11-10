@@ -25,10 +25,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Get data from the DataBase
-        let firstQuestion = allQuestions.list[questionNumber]
+        // let firstQuestion = allQuestions.list[questionNumber]
         
         // Send get data to the View
-        questionLabel.text = firstQuestion.questinsText
+        // questionLabel.text = firstQuestion.questinsText
+        
+        nextQuestion()
     }
 
     @IBAction func answerPressed(_ sender: AnyObject) {
