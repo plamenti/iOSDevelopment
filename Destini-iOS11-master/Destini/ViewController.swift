@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var currentStory: Story
     var currentStoryKey: String
 
+    // This is how to init ViewController
     required init?(coder aDecoder: NSCoder) {
         storiesBank = StoriesBank()
         currentStoryKey = "story1"
@@ -31,7 +32,6 @@ class ViewController: UIViewController {
         playGame()
     }
 
-    // User presses one of the buttons
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender.tag == 1 {
             print("Top button is pressed")
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
                 exit(EXIT_SUCCESS)
             })
         }
-        
     }
+    
 }
 
