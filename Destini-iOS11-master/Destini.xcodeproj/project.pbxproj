@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		567F5CF2219812EE009DB88A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F5CF1219812EE009DB88A /* Story.swift */; };
+		567F5CF4219815AF009DB88A /* StoriesBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F5CF3219815AF009DB88A /* StoriesBank.swift */; };
 		EBB1C7411B9633A60011F5C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB1C7401B9633A60011F5C3 /* AppDelegate.swift */; };
 		EBB1C7431B9633A60011F5C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB1C7421B9633A60011F5C3 /* ViewController.swift */; };
 		EBB1C7461B9633A60011F5C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB1C7441B9633A60011F5C3 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		567F5CF1219812EE009DB88A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		567F5CF3219815AF009DB88A /* StoriesBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesBank.swift; sourceTree = "<group>"; };
 		EBB1C73B1B9633A60011F5C3 /* Destini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Destini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB1C73F1B9633A60011F5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBB1C7401B9633A60011F5C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				567F5CF1219812EE009DB88A /* Story.swift */,
+				567F5CF3219815AF009DB88A /* StoriesBank.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB1C7431B9633A60011F5C3 /* ViewController.swift in Sources */,
+				567F5CF4219815AF009DB88A /* StoriesBank.swift in Sources */,
 				EBB1C7411B9633A60011F5C3 /* AppDelegate.swift in Sources */,
 				567F5CF2219812EE009DB88A /* Story.swift in Sources */,
 			);
