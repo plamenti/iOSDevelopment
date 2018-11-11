@@ -10,10 +10,10 @@ import Foundation
 
 class Story {
     let text: String
-    let answerA: String?
-    let answerB: String?
+    let answerA: String
+    let answerB: String
     
-    init(text: String, answerA: String, answerB: String) {
+    init(text: String, answerA: String = "Play again?", answerB: String = "Exit") {
         self.text = text
         self.answerA = answerA
         self.answerB = answerB
