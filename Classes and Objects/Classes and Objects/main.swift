@@ -8,5 +8,10 @@
 
 import Foundation
 
-print("Hello, World!")
+let myCar = Car()
+
+print(myCar.color)
+print(myCar.numberOfSeats)
+print(myCar.typeOfCar)
+
 
