@@ -32,6 +32,10 @@ class Car{
         self.color = customerChosenColor
     }
     
+    func drive() -> Void {
+        print("\(self.color) Car is moving")
+    }
+    
     func printCar() -> Void {
         print(self.color)
         print(self.numberOfSeats)
