@@ -10,15 +10,31 @@ import Foundation
 
 class SelfDrivingCar: Car {
     
-    var destination: String
+    // Optional
+    var destination: String?
     
-    override init(){
-        self.destination = "The End of The World"
+    override init() {
+        // self.destination = "The End of The World"
+    }
+    
+    convenience init(someDestination: String) {
+        self.init()
+        self.destination = someDestination
+    }
+    
+    convenience init(customerChosenColor: String, someDestination: String) {
+        self.init(customerChosenColor: customerChosenColor)
+        self.destination = someDestination
     }
     
     // Override methods from super class
-    override func drive() {
-        super.drive()
-        print("\(self.color) self driving car is moving to \(self.destination)")
+    override func drive()
+    {
+        if let userSetDestination = destination{
+            print("\(self.color) self driving car is moving to \(userSetDestination)")
+        }
+        else{
+            super.drive()
+        }
     }
 }

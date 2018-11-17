@@ -22,7 +22,12 @@ let someRichGuyCar = Car(customerChosenColor: "Gold")
 someRichGuyCar.printCar()
 someRichGuyCar.drive()
 
-// Using subclass
-let mySelfDrivingCar = SelfDrivingCar(customerChosenColor: "Orange")
+// Using subclass with optional that has value
+let mySelfDrivingCar = SelfDrivingCar(customerChosenColor: "Orange", someDestination: "To the End of the World!")
 mySelfDrivingCar.printCar()
 mySelfDrivingCar.drive()
+
+// Using subclass with optional that hasn't value
+let mySecondSelfDrivingCar = SelfDrivingCar(customerChosenColor: "Grey")
+mySecondSelfDrivingCar.printCar()
+mySecondSelfDrivingCar.drive()

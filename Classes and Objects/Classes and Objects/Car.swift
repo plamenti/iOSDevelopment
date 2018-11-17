@@ -37,6 +37,7 @@ class Car{
     }
     
     func printCar() -> Void {
+        print("###")
         print(self.color)
         print(self.numberOfSeats)
         print(self.typeOfCar)
