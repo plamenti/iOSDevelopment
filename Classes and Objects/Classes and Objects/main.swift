@@ -8,10 +8,15 @@
 
 import Foundation
 
-let myCar = Car()
+let myCar = Car(customerChosenColor: "Green")
 
 print(myCar.color)
 print(myCar.numberOfSeats)
 print(myCar.typeOfCar)
+
+// Assign value to property
+myCar.color = "Red";
+print(myCar.color)
+
 
 
