@@ -23,6 +23,6 @@ someRichGuyCar.printCar()
 someRichGuyCar.drive()
 
 // Using subclass
-let mySelfDrivingCar = SelfDrivingCar()
+let mySelfDrivingCar = SelfDrivingCar(customerChosenColor: "Orange")
 mySelfDrivingCar.printCar()
 mySelfDrivingCar.drive()
