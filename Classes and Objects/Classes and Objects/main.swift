@@ -9,14 +9,12 @@
 import Foundation
 
 let myCar = Car(customerChosenColor: "Green")
-
-print(myCar.color)
-print(myCar.numberOfSeats)
-print(myCar.typeOfCar)
+myCar.printCar()
 
 // Assign value to property
 myCar.color = "Red";
-print(myCar.color)
+myCar.printCar()
 
-
-
+// Using convenience initializer
+let someRichGuyCar = Car(customerChosenColor: "Gold")
+someRichGuyCar.printCar()

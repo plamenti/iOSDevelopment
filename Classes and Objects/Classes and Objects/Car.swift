@@ -15,11 +15,26 @@ enum CarType {
 }
 
 class Car{
-    var color = "Black"
-    var numberOfSeats = 5
-    var typeOfCar: CarType = .Coupe
+    var color: String
+    var numberOfSeats: Int
+    var typeOfCar: CarType
     
-    init(customerChosenColor: String) {
+    // Designated initializer
+    init() {
+        self.color = "Black"
+        numberOfSeats = 5
+        typeOfCar = .Coupe
+    }
+    
+    // Convenience initializar
+    convenience init(customerChosenColor: String){
+        self.init()
         self.color = customerChosenColor
+    }
+    
+    func printCar() -> Void {
+        print(self.color)
+        print(self.numberOfSeats)
+        print(self.typeOfCar)
     }
 }
