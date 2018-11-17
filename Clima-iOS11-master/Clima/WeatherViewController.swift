@@ -8,13 +8,14 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "398f885cc945c9017ad7e23798096532"
-    // let APP_ID = b6907d289e10d714a6e88b30761fae22
     
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager()
@@ -41,7 +42,22 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     /***************************************************************/
     
     //Write the getWeatherData method here:
-    
+    func getWeatherData(url: String, parameters: [String: String]) {
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+            response in
+            if response.result.isSuccess {
+                print("Success! Got the weather data")
+                
+                let weatherJSON: JSON = JSON(response.result.value!)
+                print(weatherJSON)
+                
+            }
+            else {
+                print("Error \(String(describing: response.result.error)))")
+                self.cityLabel.text = "Connection Issues"
+            }
+        }
+    }
 
     
     
@@ -78,13 +94,16 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         let lastLocation = locations[locations.count - 1]
         if lastLocation.horizontalAccuracy > 0 {
             locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
             
             print("longitude = \(lastLocation.coordinate.longitude), latitude = \(lastLocation.coordinate.latitude)")
             
             let latitude = String(lastLocation.coordinate.latitude)
             let longitude = String(lastLocation.coordinate.longitude)
             
-            let params: [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID]
+            let params: [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID, "units" : "metric"]
+            
+            getWeatherData(url: WEATHER_URL, parameters: params)
         }
     }
     
