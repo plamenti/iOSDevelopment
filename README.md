@@ -1,4 +1,4 @@
-# iOS and swift training
+# iOS and Swift training
 
 ## Fix for Cocoapods v1.0.1 and below
 
@@ -30,7 +30,4 @@ end
 		</dict>
 	</dict>
 ```
-
-
-Copyright © The App Brewery
 
