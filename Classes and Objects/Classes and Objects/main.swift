@@ -21,3 +21,8 @@ myCar.drive()
 let someRichGuyCar = Car(customerChosenColor: "Gold")
 someRichGuyCar.printCar()
 someRichGuyCar.drive()
+
+// Using subclass
+let mySelfDrivingCar = SelfDrivingCar()
+mySelfDrivingCar.printCar()
+mySelfDrivingCar.drive()
