@@ -50,7 +50,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 
                 let weatherJSON: JSON = JSON(response.result.value!)
                 print(weatherJSON)
-                
+                self.updateWeatherData(json: weatherJSON)
+            
             }
             else {
                 print("Error \(String(describing: response.result.error)))")
@@ -58,18 +59,14 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
-
-    
-    
-    
-    
     
     //MARK: - JSON Parsing
     /***************************************************************/
-   
     
     //Write the updateWeatherData method here:
-    
+    func updateWeatherData(json: JSON){
+        
+    }
 
     
     
@@ -87,7 +84,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - Location Manager Delegate Methods
     /***************************************************************/
-    
     
     //Write the didUpdateLocations method here:
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
