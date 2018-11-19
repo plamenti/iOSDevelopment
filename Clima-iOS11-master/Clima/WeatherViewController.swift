@@ -19,6 +19,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager()
+    let weatherDataModel = WeatherDataModel()
 
     //Pre-linked IBOutlets
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -66,6 +67,24 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //Write the updateWeatherData method here:
     func updateWeatherData(json: JSON){
         
+        // In order to prevent crash due to invalid data unwrap safety one of the optionals from JSON
+        if let temperatureValue = json["main"]["temp"].double {
+            weatherDataModel.temperature = Int(round(temperatureValue))
+            weatherDataModel.city = json["name"].stringValue
+            weatherDataModel.condition = json["weather"][0]["id"].intValue
+            weatherDataModel.weatherIconName = weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition)
+            
+            print(weatherDataModel.temperature)
+            print(weatherDataModel.city)
+            print(weatherDataModel.condition)
+            print(weatherDataModel.weatherIconName)
+            
+            updateUIWeatherData()
+        }
+        else {
+            cityLabel.text = "Weather Unavailable"
+        }
+        
     }
 
     
@@ -74,10 +93,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - UI Updates
     /***************************************************************/
     
-    
     //Write the updateUIWithWeatherData method here:
     
-    
+    func updateUIWeatherData() {
+        cityLabel.text = weatherDataModel.city
+        temperatureLabel.text = String(weatherDataModel.temperature)
+        weatherIcon.image = UIImage(named: weatherDataModel.weatherIconName)
+    }
     
     
     
