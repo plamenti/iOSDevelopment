@@ -67,7 +67,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //Write the updateWeatherData method here:
     func updateWeatherData(json: JSON){
         
-        // In order to prevent crash due to invalid data unwrap safety one of the optionals from JSON
+        // In order to prevent crash due to invalid data unwrap safety one of the optionals from JSON - e.g. temperature
         if let temperatureValue = json["main"]["temp"].double {
             weatherDataModel.temperature = Int(round(temperatureValue))
             weatherDataModel.city = json["name"].stringValue
