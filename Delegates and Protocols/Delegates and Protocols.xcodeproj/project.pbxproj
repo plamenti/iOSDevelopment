@@ -13,6 +13,7 @@
 		5641907E21BBC98200BC27E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5641907D21BBC98200BC27E6 /* Assets.xcassets */; };
 		5641908121BBC98200BC27E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5641907F21BBC98200BC27E6 /* LaunchScreen.storyboard */; };
 		5641908B21BBFB4D00BC27E6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641908A21BBFB4D00BC27E6 /* SecondViewController.swift */; };
+		5641908D21BC01FF00BC27E6 /* CanReceive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641908C21BC01FF00BC27E6 /* CanReceive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5641908021BBC98200BC27E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5641908221BBC98200BC27E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5641908A21BBFB4D00BC27E6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5641908C21BC01FF00BC27E6 /* CanReceive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanReceive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				5641907621BBC98200BC27E6 /* AppDelegate.swift */,
 				5641907821BBC98200BC27E6 /* FirstViewController.swift */,
 				5641908A21BBFB4D00BC27E6 /* SecondViewController.swift */,
+				5641908C21BC01FF00BC27E6 /* CanReceive.swift */,
 				5641907A21BBC98200BC27E6 /* Main.storyboard */,
 				5641907D21BBC98200BC27E6 /* Assets.xcassets */,
 				5641907F21BBC98200BC27E6 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5641908D21BC01FF00BC27E6 /* CanReceive.swift in Sources */,
 				5641908B21BBFB4D00BC27E6 /* SecondViewController.swift in Sources */,
 				5641907921BBC98200BC27E6 /* FirstViewController.swift in Sources */,
 				5641907721BBC98200BC27E6 /* AppDelegate.swift in Sources */,
