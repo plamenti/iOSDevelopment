@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToSecondScreen", sender: self)
     }
     
 }
