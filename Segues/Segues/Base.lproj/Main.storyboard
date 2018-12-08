@@ -28,7 +28,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="TLZ-9X-nMK" kind="show" id="Coo-KO-gKf"/>
+                        <segue destination="TLZ-9X-nMK" kind="show" identifier="goToSecondScreen" id="Coo-KO-gKf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
