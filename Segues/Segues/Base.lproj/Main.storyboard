@@ -22,9 +22,6 @@
                                 <rect key="frame" x="153" y="281" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="TLZ-9X-nMK" kind="show" id="2uT-Ms-Q2j"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.48964351415634155" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
