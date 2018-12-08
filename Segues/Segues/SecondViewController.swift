@@ -10,6 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    var textPaseedOver: String?
+    
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {

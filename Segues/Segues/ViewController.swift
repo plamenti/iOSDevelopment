@@ -21,5 +21,12 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "goToSecondScreen", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSecondScreen" {
+            // Take some actions
+            
+        }
+    }
+    
 }
 
