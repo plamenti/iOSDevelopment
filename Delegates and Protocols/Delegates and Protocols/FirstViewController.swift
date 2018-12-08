@@ -20,6 +20,16 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToSecondScreen", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToSecondScreen" {
+            let secondVC = segue.destination as! SecondViewController
+            
+            secondVC.data = textField.text!
+        }
     }
 }
 

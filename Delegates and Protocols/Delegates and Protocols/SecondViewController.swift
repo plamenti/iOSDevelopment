@@ -10,6 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    var data: String?
+    
     @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var textField: UITextField!
@@ -18,6 +20,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        label.text = data
     }
     
     @IBAction func sendDataBackButton(_ sender: Any) {
