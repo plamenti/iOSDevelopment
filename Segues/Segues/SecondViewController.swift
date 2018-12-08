@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    var textPaseedOver: String?
+    var textPassedOver: String?
     
     @IBOutlet weak var label: UILabel!
     
@@ -18,6 +18,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        label.text = textPassedOver
     }
     
 

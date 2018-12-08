@@ -24,7 +24,10 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSecondScreen" {
             // Take some actions
-            
+            let destinatiionViewController = segue.destination as! SecondViewController
+            if let textFromTextField = textField.text {
+                destinatiionViewController.textPassedOver = textFromTextField
+            }
         }
     }
     
