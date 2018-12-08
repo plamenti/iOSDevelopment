@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, CanReceive {
 
     @IBOutlet weak var label: UILabel!
     
@@ -26,10 +26,25 @@ class FirstViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "goToSecondScreen" {
+            
             let secondVC = segue.destination as! SecondViewController
             
-            secondVC.data = textField.text!
+            if let dataToSend = textField.text {
+                if dataToSend.isEmpty {
+                    secondVC.data = "There is no data to send :("
+                } else {
+                    secondVC.data = dataToSend
+                }
+            }
+            
+            textField.text = ""
+            
+            secondVC.delegate = self
         }
+    }
+    
+    func dataReceived(data: String) {
+        label.text = data
     }
 }
 

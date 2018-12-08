@@ -11,6 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
 
     var data: String?
+    var delegate: CanReceive?
     
     @IBOutlet weak var label: UILabel!
     
@@ -24,5 +25,19 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func sendDataBackButton(_ sender: Any) {
+        
+        if let textBack = textField.text {
+            if textBack.isEmpty {
+                delegate?.dataReceived(data: "There is no data sent back :(")
+            } else {
+                delegate?.dataReceived(data: textBack)
+                textField.text = ""
+            }
+        } else {
+            delegate?.dataReceived(data: "There is no data sent back :(")
+        }
+        
+        dismiss(animated: true, completion: nil)
+        
     }
 }
