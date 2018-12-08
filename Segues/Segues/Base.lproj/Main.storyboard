@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="63" y="99"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="ICi-GC-H35">
             <objects>
-                <viewController id="TLZ-9X-nMK" sceneMemberID="viewController">
+                <viewController id="TLZ-9X-nMK" customClass="SecondViewController" customModule="Segues" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ECU-Ru-HXH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
