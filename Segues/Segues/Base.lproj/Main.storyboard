@@ -38,6 +38,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="textField" destination="dJQ-eP-zak" id="Lv8-UC-zju"/>
                         <segue destination="TLZ-9X-nMK" kind="show" identifier="goToSecondScreen" id="Coo-KO-gKf"/>
                     </connections>
                 </viewController>
@@ -64,6 +65,9 @@
                         <color key="backgroundColor" red="0.31464836629999998" green="0.73829034790000003" blue="0.55026366360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="q9s-c3-qep"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="udY-kU-gEv" id="Cp2-I6-j7N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dl-Pe-iab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
