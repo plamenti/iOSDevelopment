@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
        
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
-        getBitcoinData(url: constructUrl(index: 0))
+        getBitcoinData(url: constructUrl(index: 0), currency: currencyArray[0])
     }
 
     
@@ -40,9 +40,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(currencyArray[row])
-        print(constructUrl(index: row))
-        getBitcoinData(url: constructUrl(index: row))
+        getBitcoinData(url: constructUrl(index: row), currency: currencyArray[row])
     }
     
     func constructUrl(index: Int) -> String {
@@ -53,7 +51,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //MARK: - Networking
     /***************************************************************/
     
-    func getBitcoinData(url: String) {
+    func getBitcoinData(url: String, currency: String) {
         
         Alamofire.request(url, method: .get)
             .responseJSON { response in
@@ -63,7 +61,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                     let bitcoinJSON : JSON = JSON(response.result.value!)
                     print(bitcoinJSON)
 
-                    //self.updateWeatherData(json: weatherJSON)
+                    self.updateBitcoinData(json: bitcoinJSON, currency: currency)
 
                 } else {
                     print("Error: \(String(describing: response.result.error))")
@@ -72,30 +70,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             }
 
     }
-//
-//    
-//    
-//    
-//    
-//    //MARK: - JSON Parsing
-//    /***************************************************************/
-//    
-//    func updateWeatherData(json : JSON) {
-//        
-//        if let tempResult = json["main"]["temp"].double {
-//        
-//        weatherData.temperature = Int(round(tempResult!) - 273.15)
-//        weatherData.city = json["name"].stringValue
-//        weatherData.condition = json["weather"][0]["id"].intValue
-//        weatherData.weatherIconName =    weatherData.updateWeatherIcon(condition: weatherData.condition)
-//        }
-//        
-//        updateUIWithWeatherData()
-//    }
-//    
-
-
-
+    
+    //MARK: - JSON Parsing
+    /***************************************************************/
+    
+    func updateBitcoinData(json : JSON, currency: String) {
+        
+        if let tempResult = json["ask"].double {
+            bitcoinPriceLabel.text = "\(String (tempResult)) \(currency)"
+        } else {
+            bitcoinPriceLabel.text = "Data iunavailable!"
+        }
+    }
 
 }
 
