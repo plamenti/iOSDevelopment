@@ -8,7 +8,7 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     let baseURL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
-    let currencyArray = ["EUR","GBP", "JPY","MXN","USD","BGN"]
+    let currencyArray = ["EUR", "USD", "GBP", "BGN"]
     var finalURL = ""
 
     //Pre-setup IBOutlets
@@ -32,10 +32,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         return currencyArray.count
     }
     
-    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return currencyArray[row]
+    }
 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(currencyArray[row])
+        print(constructUrl(index: row))
+    }
     
-    
+    func constructUrl(index: Int) -> String {
+        return baseURL + currencyArray[index]
+    }
     
 //    
 //    //MARK: - Networking
