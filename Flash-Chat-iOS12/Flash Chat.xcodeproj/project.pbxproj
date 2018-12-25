@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56D31E4F21D211E500DDA24E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56D31E4E21D211E500DDA24E /* GoogleService-Info.plist */; };
 		6321A9C31B94EBA10053D2E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321A9C21B94EBA10053D2E7 /* Images.xcassets */; };
 		6321A9E21B94EBE70053D2E7 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321A9DB1B94EBE70053D2E7 /* CustomMessageCell.swift */; };
 		6321A9E51B94EBE70053D2E7 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6321A9DE1B94EBE70053D2E7 /* MessageCell.xib */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56D31E4E21D211E500DDA24E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6321A9B61B94EBA10053D2E7 /* Flash Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flash Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6321A9BA1B94EBA10053D2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6321A9C21B94EBA10053D2E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				6321A9BA1B94EBA10053D2E7 /* Info.plist */,
+				56D31E4E21D211E500DDA24E /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				63E28B291B9A336600FBF6E0 /* Main.storyboard in Resources */,
 				6321A9C31B94EBA10053D2E7 /* Images.xcassets in Resources */,
+				56D31E4F21D211E500DDA24E /* GoogleService-Info.plist in Resources */,
 				AD6D00E420EA766400B1782A /* README.md in Resources */,
 				6321A9E51B94EBE70053D2E7 /* MessageCell.xib in Resources */,
 			);
