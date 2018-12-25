@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) {
             (user, error) in
             if error != nil {
-                print("ERROR!")
+                print("ERROR! Unable to register user")
                 print(error!)
             } else {
                 // Success
