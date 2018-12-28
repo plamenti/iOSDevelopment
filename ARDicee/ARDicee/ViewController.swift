@@ -28,7 +28,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create material for the cube
         let material = SCNMaterial()
-        material.diffuse.contents = UIColor.lightGray
+        material.diffuse.contents = UIColor.yellow
         
         // Assign this material to materials array. In the example the array contains only one object
         cube.materials = [material]
@@ -43,6 +43,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Put the node to a Scene view. It is added as a child node to a root node - there could be added more child nodes
         // In example with the ship (plain) - ship is root, shipMesh is a childNode. And shipMech has also childNode - emiter
         sceneView.scene.rootNode.addChildNode(node)
+        
+        // Enable some light
+        sceneView.autoenablesDefaultLighting = true
         
 //        // Create a new scene
 //        let scene = SCNScene(named: "art.scnassets/ship.scn")!
