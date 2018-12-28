@@ -23,9 +23,30 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        // Create some geometry - e.g. Cube
+        let cube = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
+        
+        // Create material for the cube
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.lightGray
+        
+        // Assign this material to materials array. In the example the array contains only one object
+        cube.materials = [material]
+        
+        // Create node - this is a point in 3D space
+        let node = SCNNode()
+        // Give position to the node. If z is negative it is away from us!
+        node.position = SCNVector3(x:0, y:0.1, z:-0.5)
+        // Assign to that node what object to display - created cude
+        node.geometry = cube
+        
+        // Put the node to a Scene view. It is added as a child node to a root node - there could be added more child nodes
+        // In example with the ship (plain) - ship is root, shipMesh is a childNode. And shipMech has also childNode - emiter
+        sceneView.scene.rootNode.addChildNode(node)
+        
 //        // Create a new scene
 //        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-//        
+//
 //        // Set the scene to the view
 //        sceneView.scene = scene
     }
