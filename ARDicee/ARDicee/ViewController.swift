@@ -100,6 +100,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                     )
                     
                     sceneView.scene.rootNode.addChildNode(diceNode)
+                    
+                    let randomX = Float(Int.random(in: 1...4)) * (Float.pi/2)
+                    let randomZ = Float(Int.random(in: 1...4)) * (Float.pi/2)
+                    
+                    diceNode.runAction(SCNAction.rotateTo(
+                        x: CGFloat(randomX * Float(Int.random(in: 1...6))),
+                        y: 0,
+                        z: CGFloat(randomZ * Float(Int.random(in: 1...6))),
+                        duration: 0.5)
+                    )
                 }
             }
         }
