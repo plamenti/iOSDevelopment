@@ -50,14 +50,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Enable some light
         sceneView.autoenablesDefaultLighting = true
         
-        // Create a new scene
-        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
+        //        // Create a new scene
+        //        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
+        //
+        //        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
+        //
+        //            diceNode.position = SCNVector3(x: 0, y: 0, z:-0.1)
+        //            sceneView.scene.rootNode.addChildNode(diceNode)
+        //        }
         
-        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
-            
-            diceNode.position = SCNVector3(x: 0, y: 0, z:-0.1)
-            sceneView.scene.rootNode.addChildNode(diceNode)
-        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +67,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        // in roder to use .vertical - configuration.planeDetection = [.horizontal, .vertical]
+        configuration.planeDetection = .horizontal
         
         // Run the view's session
         sceneView.session.run(configuration)
