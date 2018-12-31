@@ -24,8 +24,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
-        sceneView.scene.rootNode.addChildNode(node)
-        
         // Enable some light
         sceneView.autoenablesDefaultLighting = true
     }
@@ -37,7 +35,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         
         // in roder to use .vertical - configuration.planeDetection = [.horizontal, .vertical]
-        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.planeDetection = [.horizontal]
         
         // Run the view's session
         sceneView.session.run(configuration)
@@ -56,12 +54,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             let results = sceneView.hitTest(touchLocation, types: .existingPlaneUsingExtent)
             
-            //            if !results.isEmpty {
-            //                print("Touched the plane")
-            //            } else {
-            //                print("Touched somewhere else")
-            //            }
-            
             if let hitResult = results.first {
                 print(hitResult)
                 
@@ -79,6 +71,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                     diceArray.append(diceNode)
                     
                     sceneView.scene.rootNode.addChildNode(diceNode)
+                    roll(dice: diceNode)
                 }
             }
         }
@@ -88,6 +81,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         if !diceArray.isEmpty {
             for dice in diceArray {
                 roll(dice: dice)
+            }
+        }
+    }
+    
+    @IBAction func removeAllDice(_ sender: UIBarButtonItem) {
+        if !diceArray.isEmpty {
+            for dice in diceArray {
+                dice.removeFromParentNode()
             }
         }
     }
