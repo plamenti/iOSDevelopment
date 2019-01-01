@@ -15,6 +15,9 @@ class BlueViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func navigateToYellowView(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToYellowViewController", sender: self)
+    }
+    
 }
 

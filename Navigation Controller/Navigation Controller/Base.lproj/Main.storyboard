@@ -20,7 +20,13 @@
                         <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JBv-2h-H5Y"/>
+                    <navigationItem key="navigationItem" id="JBv-2h-H5Y">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="ryu-M3-1Ir">
+                            <connections>
+                                <action selector="navigateToYellowView:" destination="BYZ-38-t0r" id="aPl-1z-11p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="EWn-iy-15t" kind="show" identifier="goToYellowViewController" id="CDE-S4-VRB"/>
                     </connections>
