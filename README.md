@@ -31,3 +31,7 @@ end
 	</dict>
 ```
 
+## Implement Navigation Controller
+Select first view controller, click on Editor -> Embed In -> Navigation Controller
+
+
