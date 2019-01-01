@@ -51,4 +51,33 @@ calculate(n1: 3, n2: 2, operation: {
     return number1 - number2
 })
 
+// Infer Closure - remove type of the variables in Closure
+calculate(n1: 3, n2: 2, operation: {
+    (number1, number2) -> Int in
+    return number1 - number2
+})
 
+// Infer Closure - remove return type of Closure
+calculate(n1: 3, n2: 2, operation: {
+    (number1, number2) in
+    return number1 - number2
+})
+
+// Infer Closure - remove return in Closure
+calculate(n1: 3, n2: 2, operation: {
+    (number1, number2) in
+    number1 - number2
+})
+
+// Substitute parameters in Closure with anonymous parameters
+// In Swift first parameter is $0, second parameter is $1 and etc
+// Infer Closure - use anonymous parameters in Closure
+calculate(n1: 3, n2: 2, operation: {
+    $0 - $1
+})
+
+// Infer Closure - use Trailing Closure
+// In Swift if the last parameter in a function is a Closure, last parameter name could be ommitted
+// and Closure could be put trailing at the end - Trailing Closure
+let result = calculate(n1: 3, n2: 2) { $0 - $1 }
+print(result)
