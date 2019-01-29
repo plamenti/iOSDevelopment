@@ -51,6 +51,11 @@ class CarrierSubscription {
     let number: String
     unowned let user: User
     
+    lazy var completePhoneNumber: () -> String = {
+        [unowned self] in
+        return self.countryCode + " " + self.number
+    }
+    
     init(name: String, countryCode: String, number: String, user: User) {
         self.name = name
         self.countryCode = countryCode
@@ -73,4 +78,31 @@ do {
     user1.add(phone: iPhone)
     let subscription1 = CarrierSubscription(name: "VivaTel", countryCode: "+359", number: "0888123456", user: user1)
     iPhone.provision(carrierSubscription: subscription1)
+    print(subscription1.completePhoneNumber())
 }
+
+class WWDCGreeting {
+    let who: String
+    
+    init(who: String) {
+        self.who = who
+    }
+    
+    lazy var greetingMaker: () -> String = {
+        [weak self] in
+        guard let strongSelf = self else {
+            return "No greetings available"
+        }
+        
+        return "Hello \(strongSelf.who)"
+    }
+}
+
+let greetingMaker: () -> String
+
+do {
+    let mermaid = WWDCGreeting(who: "caffinated mermaid")
+    greetingMaker = mermaid.greetingMaker
+}
+
+greetingMaker()
