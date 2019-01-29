@@ -21,7 +21,7 @@ class User {
 
 class Phone {
     let model: String
-    var owner: User?
+    weak var owner: User?
     
     init(model: String) {
         self.model = model
@@ -34,7 +34,7 @@ class Phone {
 }
 
 do {
-    let user1 = User(name: "John")
     let iPhone = Phone(model: "iPhone 7")
+    let user1 = User(name: "John")
     user1.add(phone: iPhone)
 }
