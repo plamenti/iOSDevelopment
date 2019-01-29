@@ -3,6 +3,8 @@ import UIKit
 class User {
     var name: String
     
+    var subscriptions: [CarrierSubscription] = []
+    
     private(set) var phones: [Phone] = []
     func add(phone: Phone) {
         phones.append(phone)
@@ -23,6 +25,16 @@ class Phone {
     let model: String
     weak var owner: User?
     
+    var carrierSubscription: CarrierSubscription?
+    
+    func provision(carrierSubscription: CarrierSubscription) {
+        self.carrierSubscription = carrierSubscription
+    }
+    
+    func decommission() {
+        self.carrierSubscription = nil
+    }
+    
     init(model: String) {
         self.model = model
         print("Phone \(model) is initialized")
@@ -33,8 +45,32 @@ class Phone {
     }
 }
 
+class CarrierSubscription {
+    let name: String
+    let countryCode: String
+    let number: String
+    unowned let user: User
+    
+    init(name: String, countryCode: String, number: String, user: User) {
+        self.name = name
+        self.countryCode = countryCode
+        self.number = number
+        self.user = user
+        
+        user.subscriptions.append(self)
+        
+        print("CarrierSubscription \(name) is initialized")
+    }
+    
+    deinit {
+        print("CarrierSubscription \(name) is baing deallocated")
+    }
+}
+
 do {
     let iPhone = Phone(model: "iPhone 7")
     let user1 = User(name: "John")
     user1.add(phone: iPhone)
+    let subscription1 = CarrierSubscription(name: "VivaTel", countryCode: "+359", number: "0888123456", user: user1)
+    iPhone.provision(carrierSubscription: subscription1)
 }
